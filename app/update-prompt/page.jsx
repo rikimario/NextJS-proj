@@ -10,18 +10,7 @@ export default function CreatePrompt() {
 
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: "", tag: "" });
-
-  const [searchParams, setSearchParams] = React.useState(null);
-
-  React.useEffect(() => {
-    const getSearchParams = async () => {
-      const params = await useSearchParams();
-      setSearchParams(params);
-    };
-
-    getSearchParams();
-  }, []);
-
+  const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
   useEffect(() => {
